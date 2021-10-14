@@ -7,10 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
-      - uses: puf17640/covid-box@master
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Run statistics action
+        uses: puf17640/covid-box@master
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
